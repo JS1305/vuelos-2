@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Vuelos API - Proyecto Spring Boot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+        }
+        h2 {
+            color: #0d6efd;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        code {
+            background-color: #eef;
+            padding: 4px 6px;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #eee;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>✈️ Proyecto Vuelos API</h1>
+    <p>Spring Boot · REST API · Postman</p>
+</header>
+
+<main>
+    <h2>📌 Descripción del proyecto</h2>
+    <p>
+        Este proyecto es una API REST desarrollada con <strong>Spring Boot</strong>
+        que permite gestionar vuelos. Está diseñada para ser probada utilizando
+        <strong>Postman</strong> y sigue buenas prácticas de arquitectura por capas.
+    </p>
+
+    <h2>⚙️ Funcionalidades</h2>
+    <ul>
+        <li>Obtener todos los vuelos</li>
+        <li>Buscar vuelos por ID</li>
+        <li>Filtrar vuelos por empresa, lugar de llegada y fecha</li>
+        <li>Ordenar vuelos dinámicamente</li>
+        <li>Crear nuevos vuelos</li>
+        <li>Actualizar vuelos existentes</li>
+        <li>Eliminar vuelos</li>
+        <li>Manejo de errores HTTP (400 y 404)</li>
+    </ul>
+
+    <h2>🔗 Endpoints principales</h2>
+    <ul>
+        <li><code>GET /vuelos</code></li>
+        <li><code>GET /vuelos/{id}</code></li>
+        <li><code>POST /vuelos</code></li>
+        <li><code>PUT /vuelos/{id}</code></li>
+        <li><code>DELETE /vuelos/{id}</code></li>
+    </ul>
+
+    <h2>🧪 Pruebas</h2>
+    <p>
+        Todas las funcionalidades del proyecto se prueban mediante <strong>Postman</strong>,
+        enviando solicitudes HTTP y verificando los códigos de respuesta y los datos devueltos.
+    </p>
+
+    <h2>📚 Tecnologías utilizadas</h2>
+    <ul>
+        <li>Java</li>
+        <li>Spring Boot</li>
+        <li>Lombok</li>
+        <li>Postman</li>
+    </ul>
+</main>
+
+<footer>
+    <p>Proyecto académico - API de Vuelos ✈️</p>
+</footer>
+
+</body>
+</html>
