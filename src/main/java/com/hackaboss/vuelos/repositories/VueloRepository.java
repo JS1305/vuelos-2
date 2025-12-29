@@ -8,16 +8,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+//Repositorio en memoria que simula una base de datos. Utiliza una lista para almacenar los vuelos.
+
 @Repository
 public class VueloRepository {
 
     private final List<Vuelo> vuelos = new ArrayList<>();
+    //Contador para generar IDs automáticamente
 
     private int nextId = 11;
 
+    //Carga inicial de datos al iniciar la aplicación.
+
     @PostConstruct
     public void init() {
-
+// Datos de ejemplo
         vuelos.add(Vuelo.builder()
                 .id(1)
                 .nombreVuelo("H001-V")
@@ -118,24 +123,26 @@ public class VueloRepository {
                 .fechaLlegada(LocalDate.of(2025, 3, 3))
                 .build());
     }
-
+    //Devuelve una copia de la lista de vuelos.
     public List<Vuelo> findAll() {
         return new ArrayList<>(vuelos);
     }
-
+    //Busca un vuelo por ID.
     public Vuelo findById(int id) {
         return vuelos.stream()
                 .filter(v -> v.getId() == id)
                 .findFirst()
                 .orElse(null);
     }
-
+    //Guarda un vuelo Si el ID es nulo, se genera automáticamente.
     public void save(Vuelo vuelo) {
         if (vuelo.getId() == null) {   // verifica null
             vuelo.setId(nextId++);
         }
         vuelos.add(vuelo);
     }
+
+    //Elimina un vuelo existente.
 
     public void delete(Vuelo vuelo) {
         vuelos.remove(vuelo);

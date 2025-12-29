@@ -15,12 +15,14 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// Servicio que contiene la lógica de negocio de los vuelos Aplica validaciones, filtros y ordenamientos.
+
 @Service
 @RequiredArgsConstructor
 public class VueloService {
 
     private final VueloRepository repository;
-
+    //Obtiene vuelos aplicando filtros y ordenamiento dinámico.
     public List<VueloResponseDTO> obtenerVuelos(
             String empresa,
             String lugarLlegada,
@@ -29,6 +31,8 @@ public class VueloService {
             String orden) {
 
         Comparator<Vuelo> comparator = Comparator.comparing(Vuelo::getFechaSalida);
+
+        // Determina el criterio de ordenamiento
 
         switch (ordenarPor != null ? ordenarPor.toLowerCase() : "") {
             case "empresa" -> comparator = Comparator.comparing(Vuelo::getEmpresa);

@@ -7,11 +7,14 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+//Modelo que representa un vuelo dentro del sistema. No está vinculado a base de datos (persistencia en memoria).
+
 @Getter
 @Setter
 @AllArgsConstructor
 @Builder
 public class Vuelo {
+    // Identificador del vuelo (se genera automáticamente)
     private Integer id;
     private String nombreVuelo;
     private String lugarSalida;

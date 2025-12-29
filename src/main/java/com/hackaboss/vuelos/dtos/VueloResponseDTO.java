@@ -4,6 +4,8 @@ import lombok.Getter;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+//DTO utilizado para devolver la información del vuelo al cliente. Incluye un campo calculado (duración del vuelo en días).
+
 @Getter
 public class VueloResponseDTO {
 
@@ -16,6 +18,7 @@ public class VueloResponseDTO {
     private LocalDate fechaLlegada;
     private long duracionDias;
 
+    //Constructor que calcula automáticamente la duración del vuelo.
     public VueloResponseDTO(int id, String nombreVuelo, String empresa,
                             String lugarSalida, String lugarLlegada,
                             LocalDate fechaSalida, LocalDate fechaLlegada) {
@@ -27,5 +30,8 @@ public class VueloResponseDTO {
         this.fechaSalida = fechaSalida;
         this.fechaLlegada = fechaLlegada;
         this.duracionDias = ChronoUnit.DAYS.between(fechaSalida, fechaLlegada);
+        if (this.duracionDias < 0) {
+            throw new IllegalArgumentException("La fecha de llegada no puede ser anterior a la fecha de salida");
+        }
     }
 }
